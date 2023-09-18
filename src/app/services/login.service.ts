@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders,HttpParams} from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class LoginService {
   baseUrl: string='';
 
   constructor(public httpClient: HttpClient) { 
-    this.baseUrl="http://localhost:8080";
+    this.baseUrl=environment.apiURL;
   }
 
   login(username:string,password:string){
