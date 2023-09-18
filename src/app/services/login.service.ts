@@ -31,10 +31,56 @@ export class LoginService {
     return this.httpClient.post(serverUrl,requestBody,options);
   }
 
+  addUser(requestBody: any){
+    let serverUrl = this.baseUrl+"/api/users/updateUserDetails";
+    var headers = new HttpHeaders();
+    var options = {headers: headers};
+    return this.httpClient.post(serverUrl,requestBody,options);
+  }
+
+  getAllCreatedIssues(){
+    let serverUrl = this.baseUrl+"/api/issues/getAllCreatedIssues";
+    var headers = new HttpHeaders();
+    var options = {headers: headers};
+    return this.httpClient.get(serverUrl,options);
+  }
+
   getAllIssues(){
     let serverUrl = this.baseUrl+"/api/issues/getAll";
     var headers = new HttpHeaders();
     var options = {headers: headers};
+    return this.httpClient.get(serverUrl,options);
+  }
+
+  getAllUsers(){
+    let serverUrl = this.baseUrl+"/api/users/getAllUsers";
+    var headers = new HttpHeaders();
+    var options = {headers: headers};
+    return this.httpClient.get(serverUrl,options);
+  }
+
+  getAllAdmins(){
+    let serverUrl = this.baseUrl+"/api/users/getAllAdmins";
+    var headers = new HttpHeaders();
+    var options = {headers: headers};
+    return this.httpClient.get(serverUrl,options);
+  }
+
+  deleteIssue(issueId:string){
+    let serverUrl = this.baseUrl+"/api/issues/deleteIssue";
+    var headers = new HttpHeaders();
+    var params = new HttpParams().set('issueId',issueId);
+    var options = {headers: headers,params:params};
+    console.log(options);
+    return this.httpClient.get(serverUrl,options);
+  }
+
+  deleteUser(userId:string){
+    let serverUrl = this.baseUrl+"/api/users/deleteUser";
+    var headers = new HttpHeaders();
+    var params = new HttpParams().set('userName',userId);
+    var options = {headers: headers,params:params};
+    console.log(options);
     return this.httpClient.get(serverUrl,options);
   }
 

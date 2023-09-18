@@ -16,6 +16,7 @@ import { LoadingInterceptor } from './interceptor/loading.interceptor';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OpenIssuesComponent } from './user-page/open-issues/open-issues.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { ViewIssuesComponent } from './view-issues/view-issues.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     SpinnerComponent,
     NavbarComponent,
     OpenIssuesComponent,
-    AddUserComponent
+    AddUserComponent,
+    ViewIssuesComponent
   ],
   imports: [
     BrowserModule,

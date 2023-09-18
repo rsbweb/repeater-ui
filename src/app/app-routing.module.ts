@@ -6,6 +6,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { OpenIssuesComponent } from './user-page/open-issues/open-issues.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { ViewIssuesComponent } from './view-issues/view-issues.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: PageNames.ADD_USER_URL,
     component: AddUserComponent,
+  },
+  {
+    path: PageNames.VIEW_ALL_ISSUES,
+    component: ViewIssuesComponent,
   },
   {
     path: '',

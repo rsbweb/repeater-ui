@@ -6,6 +6,7 @@
         class="fa fa-home w3-margin-right"></i>Issue Tracker</a>
         <a *ngIf="isAdmin==='Y'" (click)="navigateToAddIssue()" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Add Issue</a>
         <a *ngIf="isAdmin==='Y'" (click)="navigateToAddUser()" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Add User</a>
+        <a *ngIf="isAdmin==='Y'" (click)="navigateToViewAllIssues()" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">View All Issues</a>
         <a *ngIf="isAdmin==='N'" (click)="navigateToMyIssues()" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">My Issues</a>
         <a *ngIf="isAdmin==='N'" (click)="navigateToOpenIssues()" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">View Open Issues</a>
     <a  class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account" (click)="logout()">
@@ -15,6 +16,7 @@
   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
     <a *ngIf="isAdmin=='Y'" (click)="navigateToAddIssue()" class="w3-bar-item w3-button w3-padding-large">Add Issue</a>
     <a *ngIf="isAdmin=='Y'" (click)="navigateToAddUser()" class="w3-bar-item w3-button w3-padding-large">Add User</a>
+    <a *ngIf="isAdmin=='Y'" (click)="navigateToViewAllIssues()" class="w3-bar-item w3-button w3-padding-large">View All Issues</a>
     <a *ngIf="isAdmin=='N'" (click)="navigateToMyIssues()" class="w3-bar-item w3-button w3-padding-large">My Issues</a>
     <a *ngIf="isAdmin=='N'" (click)="navigateToOpenIssues()" class="w3-bar-item w3-button w3-padding-large">View Open Issues</a>
     <a class="w3-bar-item w3-button w3-padding-large" (click)="logout()">  <img src="/assets/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px;margin-right: 5px;" alt="Avatar">Logout</a>

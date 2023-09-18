@@ -11,3 +11,9 @@ export interface IssueDetails{
     status: string;
     assignedUserName: string;
 }
+
+export interface UserDetails{
+    userName: string;
+    password:string;
+    isAdmin:boolean;
+}

@@ -89,6 +89,8 @@ export class NavbarComponent {
   navigateToAddUser(){
     this.router.navigate([PageNames.ADD_USER_URL]);
   }
-
+  navigateToViewAllIssues(){
+    this.router.navigate([PageNames.VIEW_ALL_ISSUES]);
+  }
  
 }

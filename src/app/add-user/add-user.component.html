@@ -1,1 +1,95 @@
-<p>add-user works!</p>
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+    <div class="w3-row-padding">
+        <div class="w3-col m6">
+            <div class="w3-card w3-round w3-white">
+                <div class="w3-container">
+                 <h4 class="w3-center">Add User/Admin</h4>
+                </div>
+                <div class="w3-container">
+                    <form [formGroup]="form">
+                        
+                        <div class="form-floating mb-3 w3-center formElements">
+                          <input type="text" class="form-control" id="userName" placeholder="userName"
+                            formControlName="userName">
+                          <label for="userName">User Name</label>
+                        </div>
+                        <div class="form-floating mb-3 formElements">
+                          <input type="text" class="form-control" id="password" placeholder="password"
+                            formControlName="password">
+                          <label for="password">Password</label>
+                        </div>
+                        <div class="form-check formElements">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="isAdmin">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              is Admin ?
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-success" (click)="addUser()">Add User</button>
+                        <h3>{{ message }}</h3>
+                      </form>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col m3">
+            <div class="w3-card w3-round w3-white">
+                <div class="w3-container">
+                 <h4 class="w3-center">Existing Users</h4>
+                </div>
+                <div class="w3-container w3-center">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                          <tr *ngFor="let user of userDetailsAll">
+                            <td><i class="material-icons removeIcon" (click)="confirmDelete(user.userName)">remove_circle_outline</i></td>
+                            <td><img src="assets/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px;margin-right: 5px;" alt="Avatar">{{user.userName}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                   </div>
+            </div>
+        </div>
+        <div class="w3-col m3">
+            <div class="w3-card w3-round w3-white">
+                <div class="w3-container">
+                 <h4 class="w3-center">Existing Admins</h4>
+                </div>
+                <div class="w3-container w3-center">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                          <tr *ngFor="let user of adminDetailsAll">
+                            <td><i class="material-icons removeIcon" (click)="confirmDelete(user.userName)">remove_circle_outline</i></td>
+                            <td><img src="assets/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px;margin-right: 5px;" alt="Avatar">{{user.userName}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                   </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="id03" class="w3-modal" >
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+          <header class="w3-container w3-teal"> 
+            <span onclick="document.getElementById('id03').style.display='none'" 
+            class="w3-button w3-display-topright">&times;</span>
+            <h2>Do you want to delete the user ?</h2>
+          </header>
+          <div class="w3-container" style="margin:50px;">
+            <div class="w3-center">
+                <button type="button" style="margin:10px;" class="btn btn-success" (click)="deleteUser()">Yes</button>
+                <button type="button" style="margin:10px;" class="btn btn-danger" onclick="document.getElementById('id03').style.display='none'" >No</button>
+            </div>
+          </div>
+        </div>
+      </div>
