@@ -1,0 +1,43 @@
+<div class="w3-container w3-content w3-white w3-card w3-round" style="max-width:1000px;margin-top:80px">   
+  <div class="w3-half w3-center">
+    <h2 >Add Activity/Issue</h2>
+    <form [formGroup]="form">
+      <div class="form-floating formElements" >
+        <select class="form-select" id="activityType" aria-label="Floating label select example"
+          formControlName="activityType">
+          <option value="Installation" selected>Installation</option>
+          <option value="Complaint">Complaint</option>
+        </select>
+        <label for="activityType">Activity Type</label>
+      </div>
+      <div class="form-floating mb-3 w3-center formElements">
+        <input type="text" class="form-control" id="companyName" placeholder="companyName"
+          formControlName="companyName">
+        <label for="companyName">Company Name</label>
+      </div>
+      <div class="form-floating mb-3 formElements">
+        <input type="text" class="form-control" id="companyAddress" placeholder="companyAddress"
+          formControlName="companyAddress">
+        <label for="companyAddress">Company Address</label>
+      </div>
+      <div class="form-floating mb-3 formElements">
+        <input type="text" class="form-control" id="companyLocation" placeholder="companyLocation"
+          formControlName="companyLocation">
+        <label for="companyLocation">Company Location</label>
+      </div>
+      <div class="form-floating mb-3 formElements">
+        <input type="text" class="form-control" id="customerContactName" placeholder="customerContactName"
+          formControlName="customerContactName">
+        <label for="customerContactName">Customer Contact Name</label>
+      </div>
+      <div class="form-floating mb-3 formElements">
+        <input type="text" class="form-control" id="customerContactNumber" placeholder="customerContactNumber"
+          formControlName="customerContactNumber">
+        <label for="customerContactNumber">Customer Contact Number</label>
+      </div>
+
+      <button type="button" class="btn btn-success" (click)="addIssue()">Add Activity</button>
+      <h3>{{ message }}</h3>
+    </form>
+  </div>
+</div>

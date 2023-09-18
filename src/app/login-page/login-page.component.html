@@ -1,0 +1,17 @@
+<form >
+    <div class="imgcontainer" style="align-self: center; text-decoration: underline;">
+        Login
+    </div>
+  
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"  [(ngModel)]="username" name="uname" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="text" placeholder="Enter Password" [(ngModel)]="password" name="psw" required>
+  
+      <button type="submit" (click)="login()">Login</button>
+      <h3>{{ message }}</h3>
+    </div>
+  
+  </form>
